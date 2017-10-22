@@ -1,0 +1,75 @@
+@viewport { width: device-width; }
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+* {
+  &:before,
+  &:after { box-sizing: inherit; }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// Main Wrap
+#main {
+  flex: 1;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+// Main Wrap ends
+
+a {
+  background: transparent;
+  //color: $color-link;
+  text-decoration: none;
+  transition: color .2s;
+  cursor: pointer;
+  @include hover() {
+    //color: $color-link-hover;
+    text-decoration: none;
+  }
+  &.link-nocolor {
+    //color: $color-primary;
+    &:hover {
+      //color: $color-link-hover;
+    }
+  }
+}
+
+small {
+  @include ms-respond(font-size, -1);
+}
+
+// Headers (font sizes are set using Modular Scale addon)
+h1, .h1 {
+  @include ms-respond(font-size,7);
+}
+
+h2, .h2 {
+  @include ms-respond(font-size,6);
+}
+
+h3, .h3 {
+  @include ms-respond(font-size,5);
+}
+
+h4, .h4 {
+  @include ms-respond(font-size,3);
+}
+
+h5, .h5 {
+  @include ms-respond(font-size,2);
+}
+
+h6, .h6 {
+  @include ms-respond(font-size,0);
+}

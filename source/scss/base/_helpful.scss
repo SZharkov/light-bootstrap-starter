@@ -1,0 +1,134 @@
+
+
+
+// Text Weight
+.fw-light {
+  font-weight: $font-weight-light !important;
+}
+
+.fw-normal {
+  font-weight: $font-weight-normal !important;
+}
+
+.fw-medium {
+  font-weight: $font-weight-medium !important;
+}
+
+.fw-bold {
+  font-weight: $font-weight-bold !important;
+}
+
+.fw-black {
+  font-weight: $font-weight-black !important;
+}
+
+
+
+// Custom Text Sizes
+.text-xsm {
+  @include ms-respond(font-size,-1);
+}
+.text-sm {
+  @include ms-respond(font-size,0);
+}
+.text-md {
+  @include ms-respond(font-size,1);
+}
+.text-l {
+  @include ms-respond(font-size,2);
+}
+.text-xl {
+  @include ms-respond(font-size,3);
+}
+.text-xxl {
+  @include ms-respond(font-size,4);
+}
+
+
+
+// Text Colors
+.text-weak {
+  //color: $color-text-weak;
+}
+.text-white {
+  color: #ffffff;
+}
+.text-accent {
+  //color: $color-accent !important;
+}
+
+
+
+// Opacity
+$i : 0;
+@while $i <= 1 {
+
+  /* #{$i*100} */
+  .op#{round($i*10)} {
+    opacity: $i !important;
+  }
+
+  $i : $i + 0.1;
+}
+
+
+
+
+// Position
+.pos-rel {
+  position: relative;
+}
+
+
+
+// Backgorund
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.bg-img {
+  @include bg-img();
+}
+
+
+
+// Overlays
+%overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.bg-overlay {
+  @extend %overlay;
+  background-color: rgba(0,0,0, 0.5);
+  &-gradient {
+    @extend %overlay;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,ffffff+100 */
+    background: #000000; /* Old browsers */
+    background: -moz-linear-gradient(top, #000000 0%, #ffffff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #000000 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #000000 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+  }
+}
+
+
+
+// Verticaly and horizontal centered with flex
+%v-h-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+// Box shadow
+.box-shadow {
+  box-shadow: 1px 2px 44px 0 rgba(0,0,0, 0.15);
+}
+.no-shadow {
+  box-shadow: none !important;
+}
